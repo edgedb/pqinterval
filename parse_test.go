@@ -197,3 +197,12 @@ func TestParseMixedSigns(t *testing.T) {
 		"parsed interval us",
 	)
 }
+
+func TestParseZeroValue(t *testing.T) {
+	i, err := parse("00:00:00")
+	assert.Nil(t, err, "parse error")
+
+	assert.EqualValues(t, i.yrs, 0, "parsed interval yrs")
+	assert.EqualValues(t, i.hrs, 0, "parsed interval hrs")
+	assert.EqualValues(t, i.us, 0, "parsed interval us")
+}

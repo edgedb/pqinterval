@@ -82,7 +82,7 @@ func (ival *Interval) Scan(src interface{}) error {
 	case []byte:
 		s = string(x)
 	case nil:
-		s = "0"
+		s = "00:00:00"
 	default:
 		return errors.New(
 			"pqinterval: converting driver.Value type %T (%q) to string: invalid syntax",
