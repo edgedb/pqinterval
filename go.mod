@@ -1,4 +1,4 @@
-module github.com/teepark/pqinterval
+module github.com/sanyokbig/pqinterval
 
 go 1.12
 
