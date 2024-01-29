@@ -69,6 +69,15 @@ func TestParseHours(t *testing.T) {
 	assert.EqualValues(t, 0, i.us, "parsed interval us")
 }
 
+func TestParseLargeHours(t *testing.T) {
+	i, err := parse("355:00:00")
+	assert.Nil(t, err, "parse error")
+
+	assert.EqualValues(t, 0, i.yrs, "parsed interval yrs")
+	assert.EqualValues(t, 355, i.hrs, "parsed interval hrs")
+	assert.EqualValues(t, 0, i.us, "parsed interval us")
+}
+
 func TestParseNegativeHours(t *testing.T) {
 	i, err := parse("-04:00:00")
 	assert.Nil(t, err, "parse error")
