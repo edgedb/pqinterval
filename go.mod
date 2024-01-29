@@ -1,4 +1,4 @@
-module github.com/elprans/pqinterval
+module github.com/edgedb/pqinterval
 
 go 1.12
 
